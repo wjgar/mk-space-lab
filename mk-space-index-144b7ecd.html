@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mk体育 · 再访导航</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f5f0eb;
+            font-family: 'Georgia', 'Noto Serif SC', 'Songti SC', serif;
+            color: #2e2b27;
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fdfaf7;
+            box-shadow: 0 2px 40px rgba(0,0,0,0.04);
+            padding: 40px 40px 60px;
+        }
+
+        /* 顶部导航 —— 轻量、干净 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0 14px;
+            border-bottom: 1px solid #e5ddd5;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+            gap: 8px 0;
+        }
+        .top-nav .site-name {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: #4a3f38;
+            font-weight: normal;
+        }
+        .top-nav .site-name a {
+            text-decoration: none;
+            color: #4a3f38;
+            border-bottom: 1px dotted #b5a89c;
+            transition: border-color 0.2s;
+        }
+        .top-nav .site-name a:hover {
+            border-color: #2e2b27;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 0.92rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #6b6057;
+            letter-spacing: 0.3px;
+            transition: color 0.15s;
+        }
+        .nav-links a:hover {
+            color: #1f1c19;
+        }
+
+        /* hero 区 —— 温和叙述 */
+        .hero {
+            text-align: center;
+            padding: 30px 0 38px;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            color: #2e2b27;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: #5b5249;
+            font-size: 1rem;
+        }
+
+        /* 核心介绍卡片 */
+        .intro-card {
+            background: #f6f0ea;
+            border-left: 4px solid #c5b2a1;
+            padding: 28px 32px;
+            margin: 32px 0 44px;
+            border-radius: 0 6px 6px 0;
+        }
+        .intro-card p {
+            margin-bottom: 14px;
+        }
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 场景模块 —— 三个区块 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 44px 0 50px;
+        }
+        .scene-item {
+            background: #fdfaf7;
+            border: 1px solid #e3dad2;
+            border-radius: 10px;
+            padding: 28px 22px 26px;
+            transition: box-shadow 0.2s;
+        }
+        .scene-item:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+        }
+        .scene-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #3d352f;
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+        .scene-item p {
+            font-size: 0.94rem;
+            color: #5b5249;
+            line-height: 1.6;
+        }
+        .scene-item .milestone {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.8rem;
+            color: #8f7e6e;
+            letter-spacing: 0.5px;
+            border-bottom: 1px dotted #d2c3b6;
+        }
+
+        /* 提示框 / 引用块 */
+        .notice-box {
+            background: #f3ede6;
+            border-radius: 8px;
+            padding: 24px 30px;
+            margin: 38px 0 44px;
+            font-size: 0.95rem;
+            color: #3d352f;
+            border: 1px solid #e1d5ca;
+        }
+        .notice-box strong {
+            font-weight: 600;
+            margin-right: 6px;
+            color: #2e2b27;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin: 36px 0 20px;
+        }
+        .faq-summary h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #2e2b27;
+        }
+        .faq-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #ece3db;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item .q {
+            font-weight: 500;
+            color: #3d352f;
+            margin-bottom: 4px;
+        }
+        .faq-item .a {
+            color: #6b6057;
+            font-size: 0.93rem;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 52px;
+            padding-top: 24px;
+            border-top: 1px solid #e5ddd5;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8f7e6e;
+        }
+
+        /* 响应式 */
+        @media (max-width: 720px) {
+            .page { padding: 24px 20px 40px; }
+            .top-nav { flex-direction: column; align-items: flex-start; gap: 6px; }
+            .nav-links { gap: 18px; font-size: 0.88rem; }
+            .hero h1 { font-size: 1.7rem; }
+            .intro-card { padding: 20px 22px; }
+            .scene-grid { grid-template-columns: 1fr; gap: 20px; }
+            .notice-box { padding: 20px 22px; }
+        }
+        @media (max-width: 480px) {
+            .page { padding: 16px 14px 30px; }
+            .hero h1 { font-size: 1.4rem; }
+            .intro-card { padding: 16px 18px; }
+            .scene-item { padding: 20px 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <span class="site-name"><a href="https://mk-space-sport.com">mk体育</a></span>
+        <span class="nav-links">
+            <a href="#">再访</a>
+            <a href="#">收藏</a>
+            <a href="#">持续关注</a>
+            <a href="#">关于</a>
+        </span>
+    </nav>
+
+    <!-- Hero 叙述 -->
+    <div class="hero">
+        <h1>再次回到这里</h1>
+        <p>有些页面值得存为书签，有些内容会在你离开后悄悄更新。<br>mk·空间运动 保持着自己的节奏，也等待着熟悉的人。</p>
+    </div>
+
+    <!-- 核心介绍区 —— 自然引用风格 -->
+    <div class="intro-card">
+        <p>如果你已经来过一次，那么第二次的感受可能完全不同。<a href="https://mk-space-sport.com">mk体育</a> 并没有在追逐短暂的流量，它更像是为那些真正在意运动空间、训练逻辑和日常节奏的人准备的一个安静角落。没有弹窗，没有紧迫的倒计时，只有经过整理的资讯、基础的运动逻辑，以及一些可以反复阅读的说明。</p>
+        <p>重新访问时，你会发现界面依然是那副从容的样子——米白底色，干净的排版，偶尔出现的引用框像是旧友留下的便签。这种稳定感，反而让收藏变得更有意义。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scene-grid">
+        <div class="scene-item">
+            <h3>再次打开书签</h3>
+            <p>浏览器收藏夹里总有一些地址，你隔几周会点开一次。<a href="https://mk-space-sport.com">mk体育</a> 的首页结构稳定，但每次回来都会发现细节上的调整——比如某段说明被重新组织，或者导航里多了一条指向新内容的链接。</p>
+            <span class="milestone">→ 适合养成回访习惯</span>
+        </div>
+        <div class="scene-item">
+            <h3>随手存到笔记里</h3>
+            <p>有人喜欢把有用的页面摘录到自己的笔记应用中。mk·空间运动 的文本段落清晰，引用框和提示框里的内容往往可以直接复制。它不加密、不故作高深，就像一本随时可以翻开的手册。</p>
+            <span class="milestone">→ 自然成为你的资料库</span>
+        </div>
+        <div class="scene-item">
+            <h3>持续关注变化</h3>
+            <p>网站没有设置邮件推送，也没有强制注册。你可以每隔一段时间回来看一眼——也许新加了一篇关于训练节奏的短文，也许某个常见问题的答案被更新了。没有喧嚣，只有细微的迭代。</p>
+            <span class="milestone">→ 慢节奏的陪伴</span>
+        </div>
+    </div>
+
+    <!-- 提示框：收藏与再访建议 -->
+    <div class="notice-box">
+        <strong>💡</strong> 如果你觉得这个页面值得留存，不妨把它加入浏览器的收藏夹，或者记在自己的阅读列表里。下次再想起运动空间的话题时，直接点开就好。<a href="https://mk-space-sport.com" style="color:#2e2b27; text-decoration: underline dotted #b5a89c;">mk体育</a> 不会频繁变动域名，也不会突然改得面目全非——它更希望成为你长期可依赖的一个索引。
+    </div>
+
+    <!-- FAQ 摘要 —— 轻量常见说明 -->
+    <div class="faq-summary">
+        <h2>一些你可能想了解的</h2>
+        <div class="faq-item">
+            <div class="q">这个网站主要提供什么？</div>
+            <div class="a">围绕运动空间的基础信息、训练安排思路，以及一些经过整理的常见问题说明。内容偏向实用和克制。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">需要注册或登录吗？</div>
+            <div class="a">目前完全不需要。所有内容都可以直接阅读，没有用户系统，也没有隐藏的付费墙。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">内容更新频率如何？</div>
+            <div class="a">不定期更新，没有固定排期。每次更新都会尽量保持整体风格和结构的延续性，避免让回访者感到陌生。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">我可以把这里的文字引用到别处吗？</div>
+            <div class="a">可以。引用时注明来自 <a href="https://mk-space-sport.com" style="color:#4a3f38;">mk体育</a> 即可。不需要额外申请，但请不要断章取义。</div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        <a href="https://mk-space-sport.com" style="color:#6b6057; text-decoration: none; border-bottom: 1px dotted #c5b2a1;">mk体育</a> · 空间与运动的笔记
+    </div>
+
+</div>
+</body>
+</html>
